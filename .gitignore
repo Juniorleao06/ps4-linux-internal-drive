@@ -1,27 +1,23 @@
-Large Linux images and archives
-
+# Large Linux images and archives
 *.img
 *.qcow2
 *.vmdk
 ps4linux.tar.xz
 
-Private credentials
-
+# Private credentials
 *.pem
 *.key
-.p12
+*.p12
 .env
-.env.
+.env.*
 
-Temporary files and logs
-
+# Temporary files and logs
 *.log
 *.tmp
 *.bak
 *~
 
-Editor files
-
+# Editor files
 .vscode/
 .idea/
 .DS_Store

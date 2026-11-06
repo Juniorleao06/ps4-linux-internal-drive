@@ -47,9 +47,21 @@ These results are observations, not compatibility or performance guarantees.
 
 ### Binary release status
 
-The tested PS4 kernel, initramfs, and installation scripts are not currently provided as verified public release files. Their upstream sources, licenses, and redistribution requirements must be reviewed before publication.
+**Experimental Baikal V8 prerelease:** [Download the tested-user-supplied boot files](https://github.com/Juniorleao06/ps4-linux-internal-drive/releases/tag/v1.0.0-baikal-v8).
 
-**Not included:** the CachyOS `ps4linux.tar.xz` distribution archive, a PS4 exploit/payload, or console-specific HDD keys. Do not substitute an arbitrary CachyOS ISO for the tested PS4-compatible root filesystem archive.
+Release assets: `bzImage`, `initramfs-baikal-v8-password-recovery.cpio.gz`,
+`init-source`, `install-HDD-auto.sh`, and `SHA256SUMS`.
+The initramfs filename is **not** `initramfs.cpio.gz` in the release. If your existing
+PS4 loader specifically expects `initramfs.cpio.gz`, rename a *copy* to that
+filename; do not overwrite your known-good backup. The correct location depends
+on the loader and is not universal.
+
+**Not included:** `ps4linux.tar.xz`, a PS4 exploit/payload, or console-specific
+HDD keys. Do not use a standard CachyOS ISO in place of a PS4-compatible rootfs.
+
+**Redistribution notice:** Publication does not mean that kernel corresponding
+source, firmware rights, or bundled utility licenses have been fully audited.
+See [Redistribution Audit](docs/REDISTRIBUTION_AUDIT.md) before mirroring binaries.
 
 ## Installation
 
@@ -58,8 +70,8 @@ Read **[Installation](docs/INSTALLATION.md)** completely before proceeding. The 
 ## Boot an existing installation
 
 1. Back up your known-good initramfs and the Linux image if possible.
-2. Put `boot/initramfs.cpio.gz` at the path required by your existing PS4 Linux payload.
-3. Boot using `kernel/bzImage` and your existing compatible Linux loader.
+2. Back up your current boot files. Use the release asset `initramfs-baikal-v8-password-recovery.cpio.gz`; if your loader requires `initramfs.cpio.gz`, rename a copy and place it at the path required by your existing loader.
+3. Boot using the release asset `bzImage` and your existing compatible Linux loader.
 4. When the screen says `Existing ps4linux.img detected`, press **Enter** to boot it.
 5. **Do not type `RESET`** unless you intentionally want to destroy and reinstall the Linux image.
 
@@ -79,7 +91,7 @@ vkcube
 
 ## Stability, upstream licensing and redistribution
 
-This is **unstable experimental software**. The initramfs bundles third-party programs and firmware, and the kernel is a third-party Linux build. Preserving existing copyright notices does **not** automatically satisfy all redistribution and corresponding-source obligations. **Before a public binary release, verify the origin, licenses, and source availability of the kernel, initramfs binaries, firmware, and CachyOS archive.** See [Credits](docs/CREDITS.md). No license is asserted over third-party components by this project.
+This is **unstable experimental software**. The initramfs bundles third-party programs and firmware, and the kernel is a third-party Linux build. Preserving existing copyright notices does **not** automatically satisfy all redistribution and corresponding-source obligations. **The binaries are already published as an experimental prerelease, but their complete origin, licenses, and corresponding-source obligations are not yet verified.** See [Credits](docs/CREDITS.md). No license is asserted over third-party components by this project.
 
 ## Credits
 
@@ -119,7 +131,7 @@ Modified and tested by **Juniorleao06**.
 The tested setup uses a 50 GiB ext4 loopback image
 stored on the PS4 internal HDD.
 
-The modified initramfs and installer will be
-published after their sources and licenses
-have been reviewed.
+The modified initramfs and installer are available in the
+[experimental V8 prerelease](https://github.com/Juniorleao06/ps4-linux-internal-drive/releases/tag/v1.0.0-baikal-v8).
+Their redistribution audit is still incomplete.
 
