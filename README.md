@@ -36,16 +36,19 @@ These results are observations, not compatibility or performance guarantees.
 ## Files
 
 ```text
-boot/initramfs.cpio.gz       Boot/recovery initramfs (v1 public naming)
-kernel/bzImage              Exact kernel binary used on the tested console
-source/init                 Initramfs entrypoint source
-source/install-HDD-auto.sh  Internal-HDD installation helper
-docs/INSTALLATION.md        Detailed installation and boot guide
-docs/RECOVERY.md            Password recovery and non-destructive boot
-docs/COMPATIBILITY.md       Tested and untested behavior
-docs/CREDITS.md             Upstream credits and provenance limitations
-docs/SECURITY.md            Safety and disclosure guidance
-SHA256SUMS                  Checksums for release files
+### Documentation available
+
+- [Installation Guide](docs/INSTALLATION.md)
+- [Boot and Recovery](docs/BOOT_AND_RECOVERY.md)
+- [Password Recovery](docs/RECOVERY.md)
+- [Compatibility](docs/COMPATIBILITY.md)
+- [Credits](docs/CREDITS.md)
+- [Security](docs/SECURITY.md)
+- [Contributing](CONTRIBUTING.md)
+
+### Binary release status
+
+The tested PS4 kernel, initramfs, and installation scripts are not currently provided as verified public release files. Their upstream sources, licenses, and redistribution requirements must be reviewed before publication.
 ```
 
 **Not included:** the CachyOS `ps4linux.tar.xz` distribution archive, a PS4 exploit/payload, or console-specific HDD keys. Do not substitute an arbitrary CachyOS ISO for the tested PS4-compatible root filesystem archive.
