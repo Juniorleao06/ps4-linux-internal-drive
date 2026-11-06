@@ -5,7 +5,7 @@
 
 **Run CachyOS from the PlayStation 4 internal HDD — no USB storage required.**
 
-**EXPERIMENTAL · UNSTABLE · ONE-CONSOLE VALIDATION**
+**EXPERIMENTAL · UNSTABLE · ONE-CONSOLE VALIDATION · CONTRIBUTIONS WELCOME**
 
 </div>
 
@@ -97,9 +97,51 @@ This is **unstable experimental software**. The initramfs bundles third-party pr
 
 **Modified and tested by [Juniorleao06](https://github.com/Juniorleao06).** Original work and upstream components are credited in [CREDITS.md](docs/CREDITS.md). Credit does not imply upstream endorsement.
 
-## Contributions
+## Community Contributions — Everyone Is Welcome!
 
-Issues and pull requests are welcome. Include hardware revision, kernel, boot logs, and steps to reproduce. **Never upload console keys, passwords, unique console identifiers, or private data.**
+**This is a public experimental community project.** Everyone is welcome to
+fork the repository, test it, improve scripts and documentation, report bugs,
+and propose changes through Pull Requests. You do not need direct write access.
+The maintainer reviews proposed changes before merging them into `main`.
+
+- **Report problems or suggest features:** [Open an Issue](https://github.com/Juniorleao06/ps4-linux-internal-drive/issues/new)
+- **Propose a change:** [Open a Pull Request](https://github.com/Juniorleao06/ps4-linux-internal-drive/pulls)
+- **Contribution guide:** [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Experimental Baikal V8 release:** [v1.0.0-baikal-v8](https://github.com/Juniorleao06/ps4-linux-internal-drive/releases/tag/v1.0.0-baikal-v8)
+
+### Help Wanted
+
+- Test additional PS4 models and hardware revisions, reporting verified results.
+- Improve installation, recovery, boot and troubleshooting guides.
+- Review installer safety and avoid destructive HDD operations.
+- Investigate RadeonSI, RADV, Vulkan, Mesa and desktop compatibility.
+- Trace exact upstream source revisions, corresponding source, licenses and
+  firmware permissions for the [redistribution audit](docs/REDISTRIBUTION_AUDIT.md).
+- Translate documentation and make it easier for beginners to follow.
+
+### How to Contribute
+
+1. Open an Issue for a bug, feature request or substantial proposal.
+2. Fork this repository, make changes in your own branch, and open a Pull Request.
+3. Describe the changes and provide your PS4 model, kernel and test results.
+4. Never include PS4 HDD keys, passwords, private console identifiers or
+   third-party binaries without confirmed redistribution permission.
+
+**Critical safety note:** Never format the entire PS4 HDD. Do not use `RESET`
+to recover a password: it may destroy the existing Linux image. Use the
+`PASSWD` option followed by `YES-PASSWD` as described in [Recovery](docs/RECOVERY.md).
+
+### Licensing and Attribution
+
+The project is open for community contributions, but **public access is not
+an unlimited license to redistribute or relicense third-party software**.
+Kernel, initramfs, firmware and bundled utilities retain their own applicable
+licenses. Source and redistribution compliance is still being reviewed;
+contributors are welcome to help document and resolve outstanding items.
+
+**Modified and tested by [Juniorleao06](https://github.com/Juniorleao06)**
+on one PS4 Slim Baikal, firmware 13.52. Original authors and download sources
+are credited below and in [CREDITS.md](docs/CREDITS.md).
 
 ## Download References
 

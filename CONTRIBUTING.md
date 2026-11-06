@@ -42,3 +42,18 @@ Respect the licenses and contributions of upstream developers.
 Modified and tested by Juniorleao06.
 
 This project is independent and experimental.
+
+## Open Community Contributions
+
+Anyone can open Issues or submit Pull Requests through a fork. Direct write
+access is not necessary. Describe what you changed and how you tested it.
+
+For hardware reports, include the PS4 revision, firmware, kernel, logs and
+reproduction steps where available. Clearly label untested proposals.
+
+Do not share console keys, private data or unverified third-party binaries.
+Never recommend `RESET` for password recovery; use `PASSWD` / `YES-PASSWD`.
+Do not suggest formatting the whole PS4 HDD.
+
+Help identifying upstream sources and fulfilling third-party license
+obligations is welcome. The redistribution audit is still open.
