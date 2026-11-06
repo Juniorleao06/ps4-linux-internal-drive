@@ -35,7 +35,6 @@ These results are observations, not compatibility or performance guarantees.
 
 ## Files
 
-```text
 ### Documentation available
 
 - [Installation Guide](docs/INSTALLATION.md)
@@ -49,7 +48,6 @@ These results are observations, not compatibility or performance guarantees.
 ### Binary release status
 
 The tested PS4 kernel, initramfs, and installation scripts are not currently provided as verified public release files. Their upstream sources, licenses, and redistribution requirements must be reviewed before publication.
-```
 
 **Not included:** the CachyOS `ps4linux.tar.xz` distribution archive, a PS4 exploit/payload, or console-specific HDD keys. Do not substitute an arbitrary CachyOS ISO for the tested PS4-compatible root filesystem archive.
 
@@ -90,3 +88,38 @@ This is **unstable experimental software**. The initramfs bundles third-party pr
 ## Contributions
 
 Issues and pull requests are welcome. Include hardware revision, kernel, boot logs, and steps to reproduce. **Never upload console keys, passwords, unique console identifiers, or private data.**
+
+## Download References
+
+### PS4 Linux Kernel
+
+**Tested kernel:** `7.0.8-Strawberry-ThinLTO-Baikal-+`
+
+Original project:
+https://github.com/rmuxnet/ps4-linux-12xx
+
+### CachyOS Light for PS4
+
+**Root filesystem archive:** `ps4linux.tar.xz`
+
+MediaFire:
+https://www.mediafire.com/file/hvlz6qk3e36rlk1/ps4linux.tar.xz/file
+
+Original download page:
+https://dionkill.github.io/ps4-linux-tutorial/files.html
+
+**Important:** These are upstream download references.
+The exact downloaded binaries have not yet been
+verified by matching SHA-256 checksums.
+
+### Internal HDD Modifications
+
+Modified and tested by **Juniorleao06**.
+
+The tested setup uses a 50 GiB ext4 loopback image
+stored on the PS4 internal HDD.
+
+The modified initramfs and installer will be
+published after their sources and licenses
+have been reviewed.
+
