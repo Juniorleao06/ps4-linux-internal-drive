@@ -12,6 +12,48 @@
 > [!CAUTION]
 > This is an experimental PS4 Linux modification, **not a stable or universally compatible installer**. It worked on one PS4 Slim Baikal, but other consoles may fail to boot or suffer data loss. Back up your PS4 data and keep a known-good boot image. **Never select `RESET` when you want to preserve an existing Linux installation.**
 
+<!-- DISCOVERY-START -->
+## Find this project — PS4 Linux Baikal / Internal HDD
+
+**PS4 Linux Baikal installation and internal hard drive boot** — an experimental
+community project for running **CachyOS Linux LXQt on a PlayStation 4 Slim
+(Baikal)** from a **50 GiB ext4 loopback image on the PS4 internal HDD**.
+This project documents the tested boot process, installation considerations,
+recovery, AMD RadeonSI graphics, and Vulkan RADV checks. It does **not** provide
+a PS4 exploit or a universal installer. Compatibility has only been confirmed
+on **one PS4 Slim Baikal (firmware 13.52)**.
+
+**Start here:** [Installation guide](docs/INSTALLATION.md) ·
+[Boot and recovery](docs/BOOT_AND_RECOVERY.md) ·
+[Compatibility](docs/COMPATIBILITY.md) ·
+[Experimental Baikal V8 downloads](https://github.com/Juniorleao06/ps4-linux-internal-drive/releases/tag/v1.0.0-baikal-v8) ·
+[Contribute](CONTRIBUTING.md).
+
+### Search in your language / Encontre o projeto no seu idioma
+
+| Language | What this project covers |
+|---|---|
+| 🇧🇷 Português | **Como instalar Linux no PS4 Baikal / Balkai**, iniciar CachyOS no HD interno do PS4 Slim, sem pendrive, com guia de instalação e recuperação de senha. Projeto experimental testado em um único console. |
+| 🇺🇸 English | **How to install Linux on PS4 Baikal**, boot CachyOS from the PS4 internal hard drive (HDD), PS4 Slim Linux setup, installation and recovery guides. Experimental, single-console validation. |
+| 🇪🇸 Español | **Cómo instalar Linux en PS4 Baikal**, arrancar CachyOS desde el disco duro interno de PS4 Slim, guía de instalación y recuperación. Experimental, probado en una consola. |
+| 🇫🇷 Français | **Installer Linux sur PS4 Baikal**, démarrer CachyOS depuis le disque dur interne de la PS4 Slim, guide d'installation et de récupération. Projet expérimental. |
+| 🇩🇪 Deutsch | **Linux auf PS4 Baikal installieren**, CachyOS von der internen PS4-Slim-Festplatte starten, Installations- und Wiederherstellungsanleitung. Experimentell. |
+| 🇮🇹 Italiano | **Installare Linux su PS4 Baikal**, avviare CachyOS dal disco rigido interno di PS4 Slim, guida all'installazione e al recupero. Sperimentale. |
+| 🇯🇵 日本語 | **PS4 BaikalにLinuxをインストール**、PS4 Slimの内蔵HDDからCachyOSを起動する実験的なプロジェクト。導入と復旧のガイドがあります。 |
+| 🇨🇳 简体中文 | **在PS4 Baikal上安装Linux**，从PS4 Slim内部硬盘启动CachyOS，提供安装与恢复说明。仅在一台主机上验证。 |
+| 🇷🇺 Русский | **Установка Linux на PS4 Baikal**, запуск CachyOS с внутреннего жесткого диска PS4 Slim, руководство по установке и восстановлению. Экспериментальный проект. |
+| 🇸🇦 العربية | **تثبيت لينكس على PS4 Baikal** وتشغيل CachyOS من القرص الصلب الداخلي لجهاز PS4 Slim، مع إرشادات التثبيت والاستعادة. مشروع تجريبي. |
+
+The guides are primarily in English. Translations and additional hardware
+compatibility reports are welcome via [Issues](https://github.com/Juniorleao06/ps4-linux-internal-drive/issues)
+and [Pull Requests](https://github.com/Juniorleao06/ps4-linux-internal-drive/pulls).
+
+> **Safety and licensing:** Do not format the entire PS4 HDD. Never use `RESET`
+> for password recovery; use `PASSWD` / `YES-PASSWD` as documented. Third-party
+> binary/source and firmware redistribution review is still open:
+> [audit](docs/REDISTRIBUTION_AUDIT.md).
+<!-- DISCOVERY-END -->
+
 ## What works on the tested PS4
 
 - Booting CachyOS LXQt from a **50 GiB ext4 image file** at `/ps4hdd/home/ps4linux.img` on the PS4's internal HDD, without a USB drive or replacing the PS4 system partition.
