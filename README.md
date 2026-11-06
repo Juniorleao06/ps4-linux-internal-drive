@@ -1,0 +1,89 @@
+<div align="center">
+
+# PS4 Linux Internal Drive
+### Baikal Edition · v1.0.0
+
+**Run CachyOS from the PlayStation 4 internal HDD — no USB storage required.**
+
+**EXPERIMENTAL · UNSTABLE · ONE-CONSOLE VALIDATION**
+
+</div>
+
+> [!CAUTION]
+> This is an experimental PS4 Linux modification, **not a stable or universally compatible installer**. It worked on one PS4 Slim Baikal, but other consoles may fail to boot or suffer data loss. Back up your PS4 data and keep a known-good boot image. **Never select `RESET` when you want to preserve an existing Linux installation.**
+
+## What works on the tested PS4
+
+- Booting CachyOS LXQt from a **50 GiB ext4 image file** at `/ps4hdd/home/ps4linux.img` on the PS4's internal HDD, without a USB drive or replacing the PS4 system partition.
+- Password recovery for the Linux account `user` via a confirmation-protected `PASSWD` option.
+- AMD Liverpool hardware-accelerated OpenGL 4.5 (Mesa RadeonSI).
+- RADV Vulkan 1.3 device detection and a successful rotating `vkcube` rendering test.
+
+These results are observations, not compatibility or performance guarantees.
+
+## Tested configuration
+
+| Component | Details |
+|---|---|
+| Console | PlayStation 4 Slim, Baikal hardware revision |
+| Reported firmware during testing | 13.52 |
+| Kernel | `7.0.8-Strawberry-ThinLTO-Baikal-+` |
+| Distribution | CachyOS x86_64, LXQt desktop; installed from a `ps4linux.tar.xz` archive |
+| Linux root filesystem | 50 GiB ext4 loop image on internal PS4 HDD |
+| GPU | AMD Liverpool, PCI ID `1002:9923` |
+| Graphics | Mesa RadeonSI / RADV, OpenGL 4.5, Vulkan 1.3 |
+
+## Files
+
+```text
+boot/initramfs.cpio.gz       Boot/recovery initramfs (v1 public naming)
+kernel/bzImage              Exact kernel binary used on the tested console
+source/init                 Initramfs entrypoint source
+source/install-HDD-auto.sh  Internal-HDD installation helper
+docs/INSTALLATION.md        Detailed installation and boot guide
+docs/RECOVERY.md            Password recovery and non-destructive boot
+docs/COMPATIBILITY.md       Tested and untested behavior
+docs/CREDITS.md             Upstream credits and provenance limitations
+docs/SECURITY.md            Safety and disclosure guidance
+SHA256SUMS                  Checksums for release files
+```
+
+**Not included:** the CachyOS `ps4linux.tar.xz` distribution archive, a PS4 exploit/payload, or console-specific HDD keys. Do not substitute an arbitrary CachyOS ISO for the tested PS4-compatible root filesystem archive.
+
+## Installation
+
+Read **[Installation](docs/INSTALLATION.md)** completely before proceeding. The tested process requires an already-working PS4 Linux loader and matching kernel; this project does not provide the exploit or PS4-side payload. The first-time installation path is less thoroughly validated than booting an existing image.
+
+## Boot an existing installation
+
+1. Back up your known-good initramfs and the Linux image if possible.
+2. Put `boot/initramfs.cpio.gz` at the path required by your existing PS4 Linux payload.
+3. Boot using `kernel/bzImage` and your existing compatible Linux loader.
+4. When the screen says `Existing ps4linux.img detected`, press **Enter** to boot it.
+5. **Do not type `RESET`** unless you intentionally want to destroy and reinstall the Linux image.
+
+## Password recovery
+
+At the existing-image prompt, type `PASSWD`, press Enter, then confirm with `YES-PASSWD`. Enter the new password twice, reboot, and boot the existing image normally. See [Recovery](docs/RECOVERY.md).
+
+## GPU checks
+
+```sh
+glxinfo -B
+vulkaninfo --summary
+vkcube
+```
+
+`vkcube` worked on the tested system; this does not establish game compatibility.
+
+## Stability, upstream licensing and redistribution
+
+This is **unstable experimental software**. The initramfs bundles third-party programs and firmware, and the kernel is a third-party Linux build. Preserving existing copyright notices does **not** automatically satisfy all redistribution and corresponding-source obligations. **Before a public binary release, verify the origin, licenses, and source availability of the kernel, initramfs binaries, firmware, and CachyOS archive.** See [Credits](docs/CREDITS.md). No license is asserted over third-party components by this project.
+
+## Credits
+
+**Modified and tested by [Juniorleao06](https://github.com/Juniorleao06).** Original work and upstream components are credited in [CREDITS.md](docs/CREDITS.md). Credit does not imply upstream endorsement.
+
+## Contributions
+
+Issues and pull requests are welcome. Include hardware revision, kernel, boot logs, and steps to reproduce. **Never upload console keys, passwords, unique console identifiers, or private data.**
